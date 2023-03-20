@@ -1,0 +1,14 @@
+{
+  "name": "8f529c59c8780d98",
+  "main": "8f529c59c8780d98@480.js",
+  "version": "480.0.0",
+  "homepage": "https://observablehq.com/d/8f529c59c8780d98",
+  "author": {
+    "name": "Jasmine",
+    "url": "https://observablehq.com/@nostalgic7312"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
