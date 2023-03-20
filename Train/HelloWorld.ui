@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>89</x>
+      <y>160</y>
+      <width>521</width>
+      <height>377</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>CheckBox</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="text">
+        <string>CheckBox</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_3">
+       <property name="text">
+        <string>CheckBox</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCalendarWidget" name="calendarWidget"/>
+     </item>
+     <item>
+      <widget class="QListView" name="listView"/>
+     </item>
+     <item>
+      <widget class="QCommandLinkButton" name="commandLinkButton">
+       <property name="text">
+        <string>CommandLinkButton</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>commandLinkButton</sender>
+   <signal>clicked()</signal>
+   <receiver>calendarWidget</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>378</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
