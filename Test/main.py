@@ -24,8 +24,6 @@ class MyMainWindow(QtWidgets.QMainWindow):
         self.welcome = Welcome.WelcomeWidget(self.signal_welcome)
         self.welcome.show()
 
-
-
     def data_welcome(self, num_page):
         print(num_page)
 
