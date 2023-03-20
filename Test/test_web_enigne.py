@@ -18,8 +18,16 @@ class MainWidget(QtWidgets.QWidget):
     def init_ui(self):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
-
         self.ui.widget_browser.load(QUrl(QFileInfo('../html/force.html').absoluteFilePath()))
+
+        # 调整widget_browser的大小
+        self.ui.widget_browser.resize(500, 500)
+        # 调整widget_browser的位置
+        self.ui.widget_browser.move(50, 50)
+        # 调整widget_browser的透明度
+        self.ui.widget_browser.setWindowOpacity(0.5)
+        # 调整widget_browser的背景色
+        self.ui.widget_browser.setStyleSheet("background-color: rgb(255, 255, 255);")
 
 
 
