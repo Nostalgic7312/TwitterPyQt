@@ -1,271 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-  </head>
+</head>
 
-  <body>
-    <div id="container"></div>
-  </body>
-  <script>
+<body>
+<div class="toolbar">
+    <div>配置项</div>
+    <div>搜索</div>
+    <div>帮助</div>
+</div>
+<div id="container"></div>
+
+</body>
+<script>
     let height = window.innerHeight;
     let width = window.innerWidth;
     let links = [];
     let nodes = [];
     $.getJSON("./links.json", function (data) {
-      links = data;
+        links = data;
     });
     $.getJSON("./nodes.json", function (data) {
-      nodes = data;
+        nodes = data;
     });
     let chart = function () {
-      links = links.filter((d) => d.sourceSize + d.targetSize > 600);
+        links = links.filter((d) => d.sourceSize + d.targetSize > 600);
 
-      console.log(links);
-      console.log(nodes);
-      let chargeScale = d3
-        .scaleLinear()
-        .domain(d3.extent(nodes, (d) => d.symbolSize))
-        .range([-5, -115]);
-      let sizeScale = d3
-        .scaleSqrt()
-        .domain(d3.extent(nodes, (d) => d.symbolSize))
-        .range([1, 15]);
-      let strengthScale = d3
-        .scaleLinear()
-        .domain(d3.extent(links, (d) => d.targetSize + d.sourceSize))
-        .range([0, 0.1]);
-      // 创建模拟系统
-      const simulation = d3
-        .forceSimulation(nodes)
-        .force(
-          "link",
-          d3
-            .forceLink(links)
-            .id((d) => d.id)
-            .distance(10)
-            .strength(0.02)
-        )
-        .force(
-          "charge",
-          d3.forceManyBody().strength((d) => chargeScale(d.symbolSize))
-        )
-        .force("x", d3.forceX())
-        .force("y", d3.forceY());
+        console.log(links);
+        console.log(nodes);
+        let chargeScale = d3
+            .scaleLinear()
+            .domain(d3.extent(nodes, (d) => d.symbolSize))
+            .range([-5, -115]);
+        let sizeScale = d3
+            .scaleSqrt()
+            .domain(d3.extent(nodes, (d) => d.symbolSize))
+            .range([1, 15]);
+        let strengthScale = d3
+            .scaleLinear()
+            .domain(d3.extent(links, (d) => d.targetSize + d.sourceSize))
+            .range([0, 0.1]);
+        // 创建模拟系统
+        const simulation = d3
+            .forceSimulation(nodes)
+            .force(
+                "link",
+                d3
+                    .forceLink(links)
+                    .id((d) => d.id)
+                    .distance(10)
+                    .strength(0.02)
+            )
+            .force(
+                "charge",
+                d3.forceManyBody().strength((d) => chargeScale(d.symbolSize))
+            )
+            .force("x", d3.forceX())
+            .force("y", d3.forceY());
 
-      // 添加svg
-      const svg = d3
-        .create("svg")
-        .attr("viewBox", [-width / 2, -height / 2, width, height])
-        .call(
-          d3.zoom().on("zoom", (event) => {
-            node.attr("transform", event.transform);
-            link.attr("transform", event.transform);
-            text.attr("transform", event.transform);
-          })
-        );
-      // 添加边
-      const link = svg
-        .append("g")
-        .attr("stroke", "#999")
-        .attr("stroke-opacity", 0.7)
-        .selectAll("line")
-        .data(links)
-        .join("line");
-
-      let linkF = link.filter((d) => d.sourceSize + d.targetSize > 800);
-
-      // 添加节点
-      const nodeColor = ["#222831", "#393e46", "#00adb5", "#eeeeee"];
-      const node = svg
-        .append("g")
-        .attr("fill", "#fff")
-        .attr("stroke", "#000")
-        .attr("stroke-width", 1.5)
-        .selectAll("circle")
-        .data(nodes)
-        .join("circle")
-        .attr("fill", (d) => nodeColor[d.category])
-        .attr("stroke-width", 0.5)
-        .attr("r", (d) => sizeScale(d.symbolSize))
-        .call(drag(simulation));
-
-      node
-        .on("mouseover", (event, d) => {
-          node
-            .transition()
-            .duration(1000)
-            .style("opacity", (n) => (isConnected(d, n) ? 1 : 0.1));
-
-          text
-            .transition()
-            .duration(1000)
-            .style("display", (n) =>
-              isConnected(d, n) & (n.symbolSize > 400) || n == d
-                ? "block"
-                : "none"
+        // 添加svg
+        const svg = d3
+            .create("svg")
+            .attr("viewBox", [-width / 2, -height / 2, width, height])
+            .call(
+                d3.zoom().on("zoom", (event) => {
+                    node.attr("transform", event.transform);
+                    link.attr("transform", event.transform);
+                    text.attr("transform", event.transform);
+                })
             );
+        // 添加边
+        const link = svg
+            .append("g")
+            .attr("stroke", "#999")
+            .attr("stroke-opacity", 0.7)
+            .selectAll("line")
+            .data(links)
+            .join("line");
 
-          linkF
-            .transition()
-            .duration(1000)
-            .style("opacity", (l) =>
-              l.source === d || l.target === d ? 1 : 0.1
+        let linkF = link.filter((d) => d.sourceSize + d.targetSize > 800);
+
+        // 添加节点
+        const nodeColor = ["#222831", "#393e46", "#00adb5", "#eeeeee"];
+        const node = svg
+            .append("g")
+            .attr("fill", "#fff")
+            .attr("stroke", "#000")
+            .attr("stroke-width", 1.5)
+            .selectAll("circle")
+            .data(nodes)
+            .join("circle")
+            .attr("fill", (d) => nodeColor[d.category])
+            .attr("stroke-width", 0.5)
+            .attr("r", (d) => sizeScale(d.symbolSize))
+            .call(drag(simulation));
+
+        node
+            .on("mouseover", (event, d) => {
+                node
+                    .transition()
+                    .duration(1000)
+                    .style("opacity", (n) => (isConnected(d, n) ? 1 : 0.1));
+
+                text
+                    .transition()
+                    .duration(1000)
+                    .style("display", (n) =>
+                        isConnected(d, n) & (n.symbolSize > 400) || n == d
+                            ? "block"
+                            : "none"
+                    );
+
+                linkF
+                    .transition()
+                    .duration(1000)
+                    .style("opacity", (l) =>
+                        l.source === d || l.target === d ? 1 : 0.1
+                    );
+            })
+            .on("mouseout", () => {
+                node.transition().duration(1000).style("opacity", 1);
+                text
+                    .transition()
+                    .duration(1000)
+                    .style("display", (d) => (d.symbolSize > 1000 ? "block" : "none"));
+                linkF.transition().duration(1000).style("opacity", 1);
+            });
+
+        function isConnected(a, b) {
+            return (
+                linkedByIndex[`${a.index},${b.index}`] ||
+                linkedByIndex[`${b.index},${a.index}`] ||
+                a.index === b.index
             );
-        })
-        .on("mouseout", () => {
-          node.transition().duration(1000).style("opacity", 1);
-          text
-            .transition()
-            .duration(1000)
-            .style("display", (d) => (d.symbolSize > 1000 ? "block" : "none"));
-          linkF.transition().duration(1000).style("opacity", 1);
+        }
+
+        const linkedByIndex = {};
+        links.forEach((d) => {
+            linkedByIndex[`${d.source.index},${d.target.index}`] = true;
         });
 
-      function isConnected(a, b) {
-        return (
-          linkedByIndex[`${a.index},${b.index}`] ||
-          linkedByIndex[`${b.index},${a.index}`] ||
-          a.index === b.index
-        );
-      }
+        // 添加图例
+        const legend = svg
+            .append("g")
+            .attr("transform", `translate(-250,${-height / 2 + 10})`);
+        const legendData = nodeColor.map((color, i) => ({
+            color: color,
+            category: i,
+        }));
 
-      const linkedByIndex = {};
-      links.forEach((d) => {
-        linkedByIndex[`${d.source.index},${d.target.index}`] = true;
-      });
+        const legendEntry = legend
+            .selectAll("g")
+            .data(legendData)
+            .enter()
+            .append("g")
+            .attr("transform", (d, i) => `translate(${i * 120},0)`);
 
-      // 添加图例
-      const legend = svg
-        .append("g")
-        .attr("transform", `translate(-250,${-height / 2 + 10})`);
-      const legendData = nodeColor.map((color, i) => ({
-        color: color,
-        category: i,
-      }));
+        let isClick = false;
+        legendEntry.on("click", function (event, d) {
+            const selectedNodes = d3
+                .selectAll("circle")
+                .filter((n) => n.category === d.category);
+            const noselecteNdoes = d3
+                .selectAll("circle")
+                .filter((n) => n.category !== d.category);
+            if (!isClick) {
+                selectedNodes.transition().duration(1000).style("opacity", 1);
+                noselecteNdoes.transition().duration(1000).style("opacity", 0.1);
+                isClick = true;
+            } else {
+                selectedNodes.transition().duration(1000).style("opacity", 1);
+            }
+        });
+        let rwidth = 20;
+        let rheight = 20;
+        let rradius = 5;
 
-      const legendEntry = legend
-        .selectAll("g")
-        .data(legendData)
-        .enter()
-        .append("g")
-        .attr("transform", (d, i) => `translate(${i * 120},0)`);
+        const pathData = d3.path();
+        pathData.moveTo(rradius, 0);
+        pathData.lineTo(rwidth - rradius, 0);
+        pathData.quadraticCurveTo(rwidth, 0, rwidth, rradius);
+        pathData.lineTo(rwidth, rheight - rradius);
+        pathData.quadraticCurveTo(rwidth, rheight, rwidth - rradius, rheight);
+        pathData.lineTo(rradius, rheight);
+        pathData.quadraticCurveTo(0, rheight, 0, rheight - rradius);
+        pathData.lineTo(0, rradius);
+        pathData.quadraticCurveTo(0, 0, rradius, 0);
 
-      let isClick = false;
-      legendEntry.on("click", function (event, d) {
-        const selectedNodes = d3
-          .selectAll("circle")
-          .filter((n) => n.category === d.category);
-        const noselecteNdoes = d3
-          .selectAll("circle")
-          .filter((n) => n.category !== d.category);
-        if (!isClick) {
-          selectedNodes.transition().duration(1000).style("opacity", 1);
-          noselecteNdoes.transition().duration(1000).style("opacity", 0.1);
-          isClick = true;
-        } else {
-          selectedNodes.transition().duration(1000).style("opacity", 1);
-        }
-      });
-      let rwidth = 20;
-      let rheight = 20;
-      let rradius = 5;
+        legendEntry
+            .append("path")
+            .attr("d", pathData.toString())
+            .attr("fill", (d) => d.color);
 
-      const pathData = d3.path();
-      pathData.moveTo(rradius, 0);
-      pathData.lineTo(rwidth - rradius, 0);
-      pathData.quadraticCurveTo(rwidth, 0, rwidth, rradius);
-      pathData.lineTo(rwidth, rheight - rradius);
-      pathData.quadraticCurveTo(rwidth, rheight, rwidth - rradius, rheight);
-      pathData.lineTo(rradius, rheight);
-      pathData.quadraticCurveTo(0, rheight, 0, rheight - rradius);
-      pathData.lineTo(0, rradius);
-      pathData.quadraticCurveTo(0, 0, rradius, 0);
+        legendEntry
+            .append("text")
+            .text((d) => `Category ${d.category}`)
+            .attr("x", 25)
+            .attr("y", 15);
 
-      legendEntry
-        .append("path")
-        .attr("d", pathData.toString())
-        .attr("fill", (d) => d.color);
+        // 添加标题
+        // node.append("title").text((d) => d.name);
 
-      legendEntry
-        .append("text")
-        .text((d) => `Category ${d.category}`)
-        .attr("x", 25)
-        .attr("y", 15);
+        const text = svg
+            .append("g")
+            .attr("fill", "#000")
+            .selectAll("text")
+            .data(nodes)
+            .join("text")
+            .text((d) => d.name)
+            .attr("x", (d) => d.x)
+            .attr("y", (d) => d.y)
+            .style("font-size", "12px")
+            .style("display", (d) => (d.symbolSize > 1000 ? "block" : "none"))
+            .style("text-anchor", "middle") // 水平居中对齐
+            .style("dominant-baseline", "central")
+            .style("pointer-events", "none");
 
-      // 添加标题
-      // node.append("title").text((d) => d.name);
+        simulation.on("tick", () => {
+            linkF
+                .attr("x1", (d) => d.source.x)
+                .attr("y1", (d) => d.source.y)
+                .attr("x2", (d) => d.target.x)
+                .attr("y2", (d) => d.target.y);
 
-      const text = svg
-        .append("g")
-        .attr("fill", "#000")
-        .selectAll("text")
-        .data(nodes)
-        .join("text")
-        .text((d) => d.name)
-        .attr("x", (d) => d.x)
-        .attr("y", (d) => d.y)
-        .style("font-size", "12px")
-        .style("display", (d) => (d.symbolSize > 1000 ? "block" : "none"))
-        .style("text-anchor", "middle") // 水平居中对齐
-        .style("dominant-baseline", "central")
-        .style("pointer-events", "none");
-        
-      simulation.on("tick", () => {
-        linkF
-          .attr("x1", (d) => d.source.x)
-          .attr("y1", (d) => d.source.y)
-          .attr("x2", (d) => d.target.x)
-          .attr("y2", (d) => d.target.y);
+            node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+            text.attr("x", (d) => d.x).attr("y", (d) => d.y);
+        });
 
-        node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-        text.attr("x", (d) => d.x).attr("y", (d) => d.y);
-      });
+        // d3.invalidation.then(() => simulation.stop());
 
-      // d3.invalidation.then(() => simulation.stop());
-
-      return svg.node();
+        return svg.node();
     };
     let drag = function (simulation) {
-      function dragstarted(event, d) {
-        if (!event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-      }
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
 
-      function dragged(event, d) {
-        d.fx = event.x;
-        d.fy = event.y;
-      }
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
 
-      function dragended(event, d) {
-        if (!event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-      }
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
 
-      return d3
-        .drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended);
+        return d3
+            .drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended);
     };
     setTimeout(() => {
-      document.querySelector("#container").appendChild(chart());
+        document.querySelector("#container").appendChild(chart());
     }, 500);
-  </script>
-  <style>
+</script>
+<style>
     * {
-      margin: 0;
+        margin: 0;
+        overflow: hidden;
     }
+
     #container {
-      width: 100%;
-      height: 100vh;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        top: 10px;
     }
-  </style>
+
+    .toolbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 100;
+        padding: 10px;
+    }
+
+    .toolbar div {
+        margin: 0 10px;
+        background-color: white;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+        padding: 0 10px 0 10px;
+        border-radius: 10px;
+        height: 30px;
+        line-height: 30px;
+        transition: all .5s;
+    }
+
+    .toolbar div:hover {
+        cursor: pointer;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+        transform: translate(1px, 1px);
+    }
+</style>
 </html>

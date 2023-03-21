@@ -9,14 +9,11 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QMenuBar, QMenu,
 class DemoNotepad(QMainWindow):
     def __init__(self, parent=None):
         super(DemoNotepad, self).__init__(parent)
-
         # 设置窗口标题
         self.setWindowTitle('实战 Qt for Python: QSettings 演示-记事本')
         # 设置窗口大小
         self.resize(480, 360)
-
         self.path = None
-
         self.initUi()
 
     def initUi(self):
@@ -24,9 +21,7 @@ class DemoNotepad(QMainWindow):
         # 设置一个文本编辑器作为中心小部件
         self.txtEditor = QPlainTextEdit(self)
         self.setCentralWidget(self.txtEditor)
-
         self.initRecentFileList()
-
         # 创建菜单条和工具条使用的Action
         self.initActions()
         # 初始化菜单条

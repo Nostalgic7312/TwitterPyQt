@@ -1,5 +1,6 @@
 import sys
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
 
 from Lib.SharedInfo import SharedInfo
 from Search import SearchWidget
@@ -19,6 +20,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.ui.pushButton.clicked.connect(self.show_config)
         self.ui.pushButton_2.clicked.connect(self.show_search)
+        self.ui.pushButton.setShortcut(Qt.CTRL + Qt.Key_N)
 
     def show_config(self):
         SharedInfo.widget_config = ConfigWidget()

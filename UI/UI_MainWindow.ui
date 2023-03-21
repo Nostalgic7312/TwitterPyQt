@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>638</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>191</width>
+      <width>227</width>
       <height>25</height>
      </rect>
     </property>
@@ -42,7 +42,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Config</string>
+        <string>配置</string>
        </property>
        <property name="flat">
         <bool>true</bool>
@@ -58,7 +58,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Search</string>
+        <string>搜索</string>
        </property>
        <property name="flat">
         <bool>true</bool>
@@ -74,7 +74,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>exit</string>
+        <string>帮助</string>
        </property>
        <property name="flat">
         <bool>true</bool>

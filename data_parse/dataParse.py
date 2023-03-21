@@ -36,7 +36,13 @@ links['max_symbolSize'] = links.apply(lambda row: max(nodes.loc[nodes['id'] == r
 links['sourceSize'] = links.apply(lambda row: nodes.loc[nodes['id'] == row['source'], 'symbolSize'].max(), axis=1)
 links['targetSize'] = links.apply(lambda row: nodes.loc[nodes['id'] == row['target'], 'symbolSize'].max(), axis=1)
 print(links)
-
+links['temp'] = links.apply(lambda x: tuple(sorted([x['source'], x['target']])), axis=1)
+# 然后删除重复的行
+links = links.drop_duplicates(subset=['temp'])
+# 最后删除临时列
+links = links.drop(columns=['temp'])
+print(links)
+links.to_json('links_no_re.json',orient='records')
 print(len(links[links['targetSize'] + links['sourceSize'] > 800]))
 
 

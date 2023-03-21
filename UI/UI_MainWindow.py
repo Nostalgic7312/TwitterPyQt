@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 480)
+        MainWindow.resize(638, 473)
         MainWindow.setStyleSheet("background-color:white;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 191, 25))
+        self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 227, 25))
         self.layoutWidget.setObjectName("layoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget)
         self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
@@ -61,6 +61,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Config"))
-        self.pushButton_2.setText(_translate("MainWindow", "Search"))
-        self.pushButton_3.setText(_translate("MainWindow", "exit"))
+        self.pushButton.setText(_translate("MainWindow", "配置"))
+        self.pushButton_2.setText(_translate("MainWindow", "搜索"))
+        self.pushButton_3.setText(_translate("MainWindow", "帮助"))

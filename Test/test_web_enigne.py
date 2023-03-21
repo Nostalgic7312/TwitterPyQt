@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWebEngineWidgets import  QWebEngineView
 
@@ -11,14 +11,16 @@ class MainWidget(QtWidgets.QWidget):
         self.init_ui()
 
     def init_ui(self):
-        self.resize(1500, 1000)
+
+        self.resize(900, 600)
         self.setStyleSheet('background-color:rgba(255,255,255,.5)')
         self.browser = QWebEngineView(self)
-        self.browser.resize(1500, 1000)
-        self.browser.load(QUrl('../html/force.html'))
+        self.browser.resize(900, 600)
+        self.browser.load(QUrl('file:///D:/PyCharm 2022.1.3/PythonProject/TwitterPyQt/html/force.html'))
 
 
 if __name__ == '__main__':
+    QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     sys = QtWidgets.QApplication(sys.argv)
     w = MainWidget()
     w.show()
