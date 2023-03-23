@@ -68,8 +68,13 @@ nodes['values'] = nodes['values'].replace(0, 100)
 nodes['EC'] = nodes['avg_symbolSize_s'] + nodes['avg_symbolSize_c']
 
 nodes.drop(columns=['x', 'y', 'avg_symbolSize_s', 'avg_symbolSize_c', 'symbolSize'], inplace=True)
+
+
+# temp = nodes['values']
+# nodes.drop(labels=['values'], axis=1, inplace=True)
+# nodes.insert(3, 'values', temp)
 print(nodes.head(100))
 nodes.to_json('nodes_parra.json', orient='records')
-nodes.to_csv('nodes_parra.csv', index=False)
+# nodes.to_csv('nodes_parra.csv', index=False)
 # print(links)
 # 用边连接的最大的节点作为边的权重

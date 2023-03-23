@@ -7,19 +7,35 @@
     <title>Document</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="./vue.js"></script>
   </head>
 
   <body>
     <div id="container">
       <div id="control">调整参数</div>
+      <div id="personList">
+        <p>人员列表</p>
+        <input type="text" placeholder="Input Name" v-model="searchName" />
+        <div id="overview">
+          <div
+            v-for="item in personListFilter"
+            :key="item.id"
+            :data-cate="cateMap[item.category]"
+            @click="changeOri(item)"
+          >
+            <p>{{item.name}}</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="arcContainer"></div>
     <div id="paraContainer"></div>
   </body>
   <script>
+    const nodeColor = ["#e21818", "#00235b", "#ffdd83", "#98dfd6"];
     // 力导向图
     let height = 900;
-    let width = 1000;
+    let width = 1100;
     let links = [];
     let nodes = [];
     let linksData = [];
@@ -31,7 +47,7 @@
       nodesData = data;
     });
     let chart = function () {
-      links = linksData.filter((d) => d.sourceSize + d.targetSize > 700);
+      links = linksData.filter((d) => d.sourceSize + d.targetSize > 500);
       nodes = nodesData;
       console.log(links);
       console.log(nodes);
@@ -39,7 +55,7 @@
         .scalePow()
         .exponent(1)
         .domain(d3.extent(nodes, (d) => d.symbolSize))
-        .range([0, -125]);
+        .range([-1, -125]);
       let sizeScale = d3
         .scaleSqrt()
         .domain(d3.extent(nodes, (d) => d.symbolSize))
@@ -65,7 +81,7 @@
       // 添加svg
       const svg = d3
         .create("svg")
-        .attr("viewBox", [-width / 2, -height / 2, width, height])
+        .attr("viewBox", [-width / 2 - 90, -height / 2, width, height])
         .call(
           d3.zoom().on("zoom", (event) => {
             node.attr("transform", event.transform);
@@ -81,23 +97,23 @@
         .attr("stroke-opacity", 0.7)
         .selectAll("line")
         .data(links)
-        .join("line");
+        .join("line")
+        .attr("class", "links");
 
-      let linkF = link;
-      // .filter(
-      //   (d) =>(d.sourceSize + d.targetSize > 800)
-      // );
+      let linkF = link.filter((d) => d.sourceSize + d.targetSize > 800);
 
       // 添加节点
-      const nodeColor = ["#e21818", "#00235b", "#ffdd83", "#98dfd6"];
+
       const node = svg
         .append("g")
+        .attr("class", "node")
         .attr("fill", "#fff")
         .attr("stroke", "#000")
         .attr("stroke-width", 1.5)
         .selectAll("circle")
         .data(nodes)
         .join("circle")
+        .attr("class", "nodes")
         .attr("fill", (d) => nodeColor[d.category])
         .attr("stroke-width", 0.5)
         .attr("r", (d) => sizeScale(d.symbolSize))
@@ -138,7 +154,6 @@
       node.on("click", (event, d) => {
         let name = "node." + d.category + "." + d.name;
         changeArc(name);
-        console.log(name);
       });
       function isConnected(a, b) {
         return (
@@ -155,12 +170,19 @@
       // console.log(linksData);
       // console.log(linkedByIndex);
       // 添加图例
+      let cateMap = {
+        0: "种子账号",
+        1: "确定账号",
+        2: "下属机构",
+        3: "疑似账号",
+      };
       const legend = svg
         .append("g")
-        .attr("transform", `translate(-250,${-height / 2 + 10})`);
+        .attr("transform", `translate(-230,${-height / 2 + 10})`);
       const legendData = nodeColor.map((color, i) => ({
         color: color,
-        category: i,
+        cateOri: i,
+        category: cateMap[i],
       }));
 
       const legendEntry = legend
@@ -170,21 +192,19 @@
         .append("g")
         .attr("transform", (d, i) => `translate(${i * 120},0)`);
 
-      let isClick = false;
-      legendEntry.on("click", function (event, d) {
+      legendEntry.on("mouseover", function (event, d) {
         const selectedNodes = d3
           .selectAll("circle")
-          .filter((n) => n.category === d.category);
+          .filter((n) => n.category === d.cateOri);
         const noselecteNdoes = d3
           .selectAll("circle")
-          .filter((n) => n.category !== d.category);
-        if (!isClick) {
-          selectedNodes.transition().duration(1000).style("opacity", 1);
-          noselecteNdoes.transition().duration(1000).style("opacity", 0.1);
-          isClick = true;
-        } else {
-          selectedNodes.transition().duration(1000).style("opacity", 1);
-        }
+          .filter((n) => n.category !== d.cateOri);
+
+        selectedNodes.transition().duration(1000).style("opacity", 1);
+        noselecteNdoes.transition().duration(1000).style("opacity", 0.1);
+      });
+      legendEntry.on("mouseout", function (event, d) {
+        d3.selectAll("circle").transition().duration(1000).style("opacity", 1);
       });
       let rwidth = 20;
       let rheight = 20;
@@ -208,7 +228,8 @@
 
       legendEntry
         .append("text")
-        .text((d) => `Category ${d.category}`)
+        .attr("font-size", "12px")
+        .text((d) => `${d.category}`)
         .attr("x", 25)
         .attr("y", 15);
 
@@ -271,6 +292,46 @@
     };
     setTimeout(() => {
       document.querySelector("#container").appendChild(chart());
+      new Vue({
+        el: "#personList",
+        data: {
+          personList: nodes,
+          cateMap: {
+            0: "种子账号",
+            1: "确定账号",
+            2: "下属机构",
+            3: "疑似账号",
+          },
+          searchName: null,
+        },
+        computed: {
+          personListFilter() {
+            if (!this.searchName) {
+              return this.personList;
+            }
+            return this.personList.filter((item) =>
+              item.name.includes(this.searchName)
+            );
+          },
+        },
+        methods: {
+          changeOri(item) {
+            // let name = "node." + item.category + "." + item.name;
+            // changeArc(name);
+            let nodes = document.querySelectorAll("#container .nodes");
+
+            node = [...nodes].filter((d) => d.__data__.name === item.name);
+            console.log(node);
+            // 触发node点击事件
+            node[0].dispatchEvent(new MouseEvent("click"));
+            // 触发node悬停事件
+            node[0].dispatchEvent(new MouseEvent("mouseover"));
+            setTimeout(() => {
+              node[0].dispatchEvent(new MouseEvent("mouseout"));
+            }, 5000);
+          },
+        },
+      });
     }, 500);
 
     // 弦图
@@ -278,9 +339,9 @@
     let nameOri = "node.1.grainnemcc";
     let arcWidth = 400;
     let radius = arcWidth / 2;
-    let colorin = "#00f";
-    let colorout = "#f00";
-    let colornone = "#ccc";
+    let colorout = "#e84646";
+    let colorin = "#ffed00";
+    let colornone = "#00235b";
     let arcLine = d3
       .lineRadial()
       .curve(d3.curveBundle.beta(0.85))
@@ -359,6 +420,7 @@
         .attr("text-anchor", (d) => (d.x < Math.PI ? "start" : "end"))
         .attr("transform", (d) => (d.x >= Math.PI ? "rotate(180)" : null))
         .text((d) => d.data.name)
+
         .each(function (d) {
           d.text = this;
         })
@@ -369,15 +431,25 @@
             .append("title")
             .text(
               (d) =>
-                `${id(d)}${d.outgoing.length} outgoing ${
+                `${id(d).split(".")[2]}\n${d.outgoing.length} outgoing \n${
                   d.incoming.length
                 } incoming`
             )
-        );
+        )
+        .attr("fill", (d) => {
+          return d.parent.data.name === "0"
+            ? nodeColor[0]
+            : d.parent.data.name === "1"
+            ? nodeColor[1]
+            : d.parent.data.name === "2"
+            ? nodeColor[2]
+            : nodeColor[3];
+        });
+
       const link = svg
         .append("g")
         .attr("stroke", colornone)
-        .attr("stroke-width", ".2px")
+        .attr("stroke-width", ".1px")
         .attr("fill", "none")
         .selectAll("path")
         .data(root.leaves().flatMap((leaf) => leaf.outgoing))
@@ -389,8 +461,11 @@
         });
 
       function overed(event, d) {
+        node.attr("fill", "#000");
         link.style("mix-blend-mode", null);
+
         d3.select(this).attr("font-weight", "bold");
+
         d3.selectAll(d.incoming.map((d) => d.path))
           .attr("stroke", colorin)
           .raise();
@@ -406,6 +481,15 @@
       }
 
       function outed(event, d) {
+        node.attr("fill", (d) => {
+          return d.parent.data.name === "0"
+            ? nodeColor[0]
+            : d.parent.data.name === "1"
+            ? nodeColor[1]
+            : d.parent.data.name === "2"
+            ? nodeColor[2]
+            : nodeColor[3];
+        });
         link.style("mix-blend-mode", "multiply");
         d3.select(this).attr("font-weight", null);
         d3.selectAll(d.incoming.map((d) => d.path)).attr("stroke", null);
@@ -418,6 +502,16 @@
           .attr("font-weight", null);
       }
 
+      // 为node添加点击事件
+      node.on("click", function (event, data) {
+        let nodes = document.querySelectorAll("#container .nodes");
+        let node = [...nodes].filter((d) => d.__data__.name === data.data.name);
+        // 触发node悬停事件
+        node[0].dispatchEvent(new MouseEvent("mouseover"));
+        setTimeout(() => {
+          node[0].dispatchEvent(new MouseEvent("mouseout"));
+        }, 5000);
+      });
       return svg.node();
     };
     $.getJSON("./nodes_arc.json", function (dataJson) {
@@ -482,6 +576,7 @@
       $.getJSON("./nodes_arc.json", function (dataJson) {
         data = [];
         nameOri = name;
+        console.log(nameOri);
         // 找到种子节点
         data.push(dataJson.find((item) => item.name === nameOri));
         console.log(dataJson);
@@ -548,8 +643,8 @@
     let keys = [];
     let x;
     let y;
-    let paraWidth = 900;
-    let paraHeight = 400;
+    let paraWidth = 1100;
+    let paraHeight = 480;
     let margin = { top: 30, right: 10, bottom: 30, left: 10 };
     let deselectedColor = "#ddd";
     let colors = d3.interpolatePuBu;
@@ -641,7 +736,6 @@
           (d) => (d !== "id") & (d != "name")
         );
         console.log(nodes_parra_f);
-        console.log(keys);
         x = new Map(
           Array.from(keys, (key) => [
             key,
@@ -665,6 +759,7 @@
       padding: 0;
       width: 100%;
       height: 100vh;
+      font-style: "Times New Roman";
     }
     * {
       margin: 0;
@@ -675,16 +770,97 @@
       height: 100vh;
       position: relative;
       top: 1px;
-      /* border: 1px solid #000; */
+      font-size: 9px;
+      text-align: center;
       left: 1px;
+    }
+    #personList {
+      width: 15%;
+      height: 83vh;
+      position: absolute;
+      /* border: 1px solid #000; */
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.95);
+      top: 8px;
+      left: 8px;
+      padding: 0;
+    }
+    #personList > p {
+      margin-top: 4px;
+    }
+    #personList input {
+      width: 90%;
+      margin: 6px 3px 1px 1px;
+      font-size: 10px;
+    }
+    #personList #overview {
+      width: 100%;
+      height: 97%;
+      /* border: 1px solid #000; */
+      overflow-y: scroll;
+
+      overflow-x: hidden;
+
+      padding: 10px;
+      box-sizing: border-box;
+      padding: 2px;
+    }
+    #personList #overview::-webkit-scrollbar {
+      width: 4px;
+      position: absolute;
+      /* display: none; */
+    }
+    #personList #overview::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 5px;
+    }
+    #personList #overview::-webkit-scrollbar-thumb:hover {
+      background: #aaa;
+      width: 8px;
+    }
+    #personList #overview div {
+      width: 100%;
+      /* border:solid #000; */
+      height: 20px;
+      line-height: 20px;
+      border-bottom: 0.5px solid #aaa;
+      font-size: 12px;
+      /* height: 20px; */
+      transition: all 0.5s;
+      position: relative;
+    }
+    #personList #overview div::after {
+      content: attr(data-cate);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(100, 100, 100, 1);
+      top: 0;
+      left: 0;
+      z-index: -1;
+      color: white;
+      transform: translate(0, 100%);
+      transition: all 0.5s;
+    }
+    #personList #overview div:hover {
+      cursor: pointer;
+    }
+    #personList #overview div:hover::after {
+      z-index: 1;
+      transform: translate(0, 0);
+    }
+    #personList #overview div p {
+      transform: scale(0.8);
     }
     #control {
       width: 98%;
       height: 100px;
       position: absolute;
-      /* background-color: ; */
+      background-color: rgba(255, 255, 255, 0.95);
       bottom: 8px;
-      backdrop-filter: blur(20px);
+      /* backdrop-filter: blur(10px); */
+
       border-radius: 10px;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
       left: 50%;
