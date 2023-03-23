@@ -19,14 +19,13 @@ print(links['target'].isin(nodes['id']).value_counts())
 nodes['id'] = 'a' + nodes['id']
 links['source'] = 'a' + links['source']
 links['target'] = 'a' + links['target']
-
+print(nodes)
+print(links)
 # 统计各点的出度与入度作为symbolSize
 merged_df = pd.merge(nodes[['id']], links.melt(), left_on='id', right_on='value')[['id', 'variable']]
 counts = merged_df.groupby('id').size().reset_index(name='counts')
 result = pd.merge(nodes[['id']], counts, on='id', how='left').fillna(0)
 nodes['symbolSize'] = result['counts']
-
-print(nodes)
 
 # 用边连接的最大的节点作为边的权重
 links['max_symbolSize'] = links.apply(lambda row: max(nodes.loc[nodes['id'] == row['source'], 'symbolSize'].max(),
@@ -36,14 +35,22 @@ links['max_symbolSize'] = links.apply(lambda row: max(nodes.loc[nodes['id'] == r
 links['sourceSize'] = links.apply(lambda row: nodes.loc[nodes['id'] == row['source'], 'symbolSize'].max(), axis=1)
 links['targetSize'] = links.apply(lambda row: nodes.loc[nodes['id'] == row['target'], 'symbolSize'].max(), axis=1)
 print(links)
+# 删除双向边
 links['temp'] = links.apply(lambda x: tuple(sorted([x['source'], x['target']])), axis=1)
-# 然后删除重复的行
-links = links.drop_duplicates(subset=['temp'])
-# 最后删除临时列
-links = links.drop(columns=['temp'])
+# 先标记重复行
+links['is_duplicated'] = links.duplicated(subset=['temp'], keep=False)
+# 然后，对重复行进行计数
+links['duplicates_count'] = links.groupby('temp')['is_duplicated'].transform('sum')
+# 最后，删除重复行
+links = links.drop_duplicates(subset=['temp', 'is_duplicated'])
+links = links.drop(columns=['temp', 'is_duplicated'])
+# 将links中duplicates_count为0的行设置为1
+links.loc[links['duplicates_count'] == 0, 'duplicates_count'] = 1
 print(links)
-links.to_json('links_no_re.json',orient='records')
-print(len(links[links['targetSize'] + links['sourceSize'] > 800]))
+
+
+# links.to_json('links_no_re.json', orient='records')
+# print(len(links[links['targetSize'] + links['sourceSize'] > 800]))
 
 
 # links.to_csv('a_links.csv', index=False)

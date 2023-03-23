@@ -1,0 +1,1379 @@
+[
+    {
+        "id": "a19044902",
+        "name": "rodsav",
+        "values": 100,
+        "category": 0,
+        "source_count": 68,
+        "target_count": 53,
+        "EC": 20930
+    },
+    {
+        "id": "a23373409",
+        "name": "GregBarila",
+        "values": 100,
+        "category": 0,
+        "source_count": 192,
+        "target_count": 133,
+        "EC": 56454
+    },
+    {
+        "id": "a36830769",
+        "name": "rodpeno",
+        "values": 100,
+        "category": 0,
+        "source_count": 37,
+        "target_count": 15,
+        "EC": 5714
+    },
+    {
+        "id": "a275982769",
+        "name": "benscadden",
+        "values": 100,
+        "category": 0,
+        "source_count": 35,
+        "target_count": 41,
+        "EC": 11695
+    },
+    {
+        "id": "a22315925",
+        "name": "melissahoyer",
+        "values": 100,
+        "category": 0,
+        "source_count": 205,
+        "target_count": 82,
+        "EC": 49997
+    },
+    {
+        "id": "a15515532",
+        "name": "katie_spain",
+        "values": 100,
+        "category": 0,
+        "source_count": 38,
+        "target_count": 48,
+        "EC": 13022
+    },
+    {
+        "id": "a5657832",
+        "name": "earleyedition",
+        "values": 100,
+        "category": 0,
+        "source_count": 159,
+        "target_count": 135,
+        "EC": 46622
+    },
+    {
+        "id": "a61436584",
+        "name": "AlexBrown77",
+        "values": 100,
+        "category": 0,
+        "source_count": 55,
+        "target_count": 37,
+        "EC": 18062
+    },
+    {
+        "id": "a753343",
+        "name": "hughjm",
+        "values": 100,
+        "category": 0,
+        "source_count": 51,
+        "target_count": 51,
+        "EC": 18369
+    },
+    {
+        "id": "a17422787",
+        "name": "darrendavidson",
+        "values": 100,
+        "category": 0,
+        "source_count": 244,
+        "target_count": 92,
+        "EC": 54998
+    },
+    {
+        "id": "a22983937",
+        "name": "StephenFenech",
+        "values": 100,
+        "category": 0,
+        "source_count": 72,
+        "target_count": 71,
+        "EC": 24117
+    },
+    {
+        "id": "a43759044",
+        "name": "shannonomeara",
+        "values": 100,
+        "category": 0,
+        "source_count": 12,
+        "target_count": 42,
+        "EC": 8332
+    },
+    {
+        "id": "a66007570",
+        "name": "markjmusgrave",
+        "values": 100,
+        "category": 0,
+        "source_count": 44,
+        "target_count": 36,
+        "EC": 10608
+    },
+    {
+        "id": "a31682898",
+        "name": "CameronEngland",
+        "values": 100,
+        "category": 0,
+        "source_count": 68,
+        "target_count": 76,
+        "EC": 25139
+    },
+    {
+        "id": "a11774122",
+        "name": "abirnbaum",
+        "values": 100,
+        "category": 0,
+        "source_count": 12,
+        "target_count": 20,
+        "EC": 1122
+    },
+    {
+        "id": "a752855778",
+        "name": "SydneyEditor",
+        "values": 100,
+        "category": 0,
+        "source_count": 237,
+        "target_count": 242,
+        "EC": 78373
+    },
+    {
+        "id": "a9429562",
+        "name": "TiffanyLaBanca",
+        "values": 100,
+        "category": 0,
+        "source_count": 28,
+        "target_count": 27,
+        "EC": 5811
+    },
+    {
+        "id": "a1330954411",
+        "name": "RedmanMediaAU",
+        "values": 100,
+        "category": 0,
+        "source_count": 16,
+        "target_count": 32,
+        "EC": 6755
+    },
+    {
+        "id": "a16610206",
+        "name": "finn_bradshaw",
+        "values": 100,
+        "category": 0,
+        "source_count": 50,
+        "target_count": 20,
+        "EC": 12511
+    },
+    {
+        "id": "a11709122",
+        "name": "paulcheesbrough",
+        "values": 100,
+        "category": 0,
+        "source_count": 146,
+        "target_count": 75,
+        "EC": 27512
+    },
+    {
+        "id": "a128359217",
+        "name": "helenmccabe",
+        "values": 100,
+        "category": 0,
+        "source_count": 227,
+        "target_count": 33,
+        "EC": 43608
+    },
+    {
+        "id": "a14155571",
+        "name": "saline",
+        "values": 100,
+        "category": 0,
+        "source_count": 46,
+        "target_count": 58,
+        "EC": 19567
+    },
+    {
+        "id": "a1107584451716931585",
+        "name": "Carly__Douglas",
+        "values": 100,
+        "category": 1,
+        "source_count": 21,
+        "target_count": 28,
+        "EC": 9703
+    },
+    {
+        "id": "a43814006",
+        "name": "r2000c",
+        "values": 100,
+        "category": 1,
+        "source_count": 128,
+        "target_count": 102,
+        "EC": 29342
+    },
+    {
+        "id": "a3072116425",
+        "name": "TriciaWatkinson",
+        "values": 100,
+        "category": 1,
+        "source_count": 26,
+        "target_count": 16,
+        "EC": 6430
+    },
+    {
+        "id": "a869739601002283008",
+        "name": "karajung",
+        "values": 100,
+        "category": 1,
+        "source_count": 37,
+        "target_count": 64,
+        "EC": 18309
+    },
+    {
+        "id": "a127151785",
+        "name": "furlernator",
+        "values": 100,
+        "category": 1,
+        "source_count": 37,
+        "target_count": 37,
+        "EC": 14965
+    },
+    {
+        "id": "a451586190",
+        "name": "rupertmurdoch",
+        "values": 100,
+        "category": 1,
+        "source_count": 794,
+        "target_count": 6,
+        "EC": 76467
+    },
+    {
+        "id": "a320692744",
+        "name": "andrew_hough",
+        "values": 100,
+        "category": 1,
+        "source_count": 129,
+        "target_count": 83,
+        "EC": 42343
+    },
+    {
+        "id": "a39221707",
+        "name": "NicholasGray",
+        "values": 100,
+        "category": 1,
+        "source_count": 234,
+        "target_count": 267,
+        "EC": 85913
+    },
+    {
+        "id": "a2313204931",
+        "name": "LillSaleh",
+        "values": 100,
+        "category": 1,
+        "source_count": 198,
+        "target_count": 151,
+        "EC": 61092
+    },
+    {
+        "id": "a135703663",
+        "name": "tminear",
+        "values": 100,
+        "category": 1,
+        "source_count": 194,
+        "target_count": 141,
+        "EC": 62703
+    },
+    {
+        "id": "a40886399",
+        "name": "TwistedKristy",
+        "values": 100,
+        "category": 1,
+        "source_count": 62,
+        "target_count": 63,
+        "EC": 22680
+    },
+    {
+        "id": "a178859360",
+        "name": "akoubaridis",
+        "values": 100,
+        "category": 1,
+        "source_count": 117,
+        "target_count": 139,
+        "EC": 48525
+    },
+    {
+        "id": "a137288990",
+        "name": "almarlatour",
+        "values": 100,
+        "category": 1,
+        "source_count": 247,
+        "target_count": 114,
+        "EC": 45160
+    },
+    {
+        "id": "a28948433",
+        "name": "lizeburke",
+        "values": 100,
+        "category": 1,
+        "source_count": 158,
+        "target_count": 112,
+        "EC": 54754
+    },
+    {
+        "id": "a76842602",
+        "name": "samanthamaiden",
+        "values": 100,
+        "category": 1,
+        "source_count": 366,
+        "target_count": 185,
+        "EC": 83782
+    },
+    {
+        "id": "a59660769",
+        "name": "rachelbaxendale",
+        "values": 100,
+        "category": 1,
+        "source_count": 201,
+        "target_count": 163,
+        "EC": 66970
+    },
+    {
+        "id": "a44525259",
+        "name": "jennamclarke",
+        "values": 100,
+        "category": 1,
+        "source_count": 169,
+        "target_count": 119,
+        "EC": 57826
+    },
+    {
+        "id": "a1078514070",
+        "name": "lehmannatlarge",
+        "values": 100,
+        "category": 1,
+        "source_count": 191,
+        "target_count": 41,
+        "EC": 45294
+    },
+    {
+        "id": "a597251143",
+        "name": "TroyBramston",
+        "values": 100,
+        "category": 1,
+        "source_count": 155,
+        "target_count": 51,
+        "EC": 44209
+    },
+    {
+        "id": "a43797149",
+        "name": "sophieelsworth",
+        "values": 100,
+        "category": 1,
+        "source_count": 147,
+        "target_count": 84,
+        "EC": 42904
+    },
+    {
+        "id": "a481561220",
+        "name": "ejohnno",
+        "values": 100,
+        "category": 1,
+        "source_count": 133,
+        "target_count": 112,
+        "EC": 46839
+    },
+    {
+        "id": "a168981860",
+        "name": "ellenwhinnett",
+        "values": 100,
+        "category": 1,
+        "source_count": 175,
+        "target_count": 48,
+        "EC": 44178
+    },
+    {
+        "id": "a51739822",
+        "name": "patricklion",
+        "values": 100,
+        "category": 1,
+        "source_count": 129,
+        "target_count": 87,
+        "EC": 41042
+    },
+    {
+        "id": "a47874155",
+        "name": "jmodoh",
+        "values": 100,
+        "category": 1,
+        "source_count": 146,
+        "target_count": 89,
+        "EC": 48671
+    },
+    {
+        "id": "a361766872",
+        "name": "zacjmclean",
+        "values": 100,
+        "category": 1,
+        "source_count": 83,
+        "target_count": 139,
+        "EC": 46776
+    },
+    {
+        "id": "a52327900",
+        "name": "SharriMarkson",
+        "values": 100,
+        "category": 1,
+        "source_count": 325,
+        "target_count": 105,
+        "EC": 71028
+    },
+    {
+        "id": "a20977752",
+        "name": "aclennell",
+        "values": 100,
+        "category": 1,
+        "source_count": 209,
+        "target_count": 121,
+        "EC": 61907
+    },
+    {
+        "id": "a1232236164",
+        "name": "_juliabradley",
+        "values": 100,
+        "category": 1,
+        "source_count": 111,
+        "target_count": 152,
+        "EC": 46989
+    },
+    {
+        "id": "a229059384",
+        "name": "jonhilldesign",
+        "values": 100,
+        "category": 1,
+        "source_count": 32,
+        "target_count": 25,
+        "EC": 6820
+    },
+    {
+        "id": "a81497957",
+        "name": "cglancey",
+        "values": 100,
+        "category": 1,
+        "source_count": 141,
+        "target_count": 81,
+        "EC": 32146
+    },
+    {
+        "id": "a29374498",
+        "name": "wallernikki",
+        "values": 100,
+        "category": 1,
+        "source_count": 142,
+        "target_count": 90,
+        "EC": 32195
+    },
+    {
+        "id": "a21687414",
+        "name": "delaney",
+        "values": 100,
+        "category": 1,
+        "source_count": 169,
+        "target_count": 93,
+        "EC": 37421
+    },
+    {
+        "id": "a30893732",
+        "name": "GRogow",
+        "values": 100,
+        "category": 1,
+        "source_count": 180,
+        "target_count": 183,
+        "EC": 48205
+    },
+    {
+        "id": "a77596982",
+        "name": "wadeNYC",
+        "values": 100,
+        "category": 1,
+        "source_count": 113,
+        "target_count": 111,
+        "EC": 31819
+    },
+    {
+        "id": "a81139048",
+        "name": "grainnemcc",
+        "values": 100,
+        "category": 1,
+        "source_count": 143,
+        "target_count": 114,
+        "EC": 34709
+    },
+    {
+        "id": "a61105343",
+        "name": "neilwrites",
+        "values": 100,
+        "category": 1,
+        "source_count": 181,
+        "target_count": 134,
+        "EC": 56269
+    },
+    {
+        "id": "a9692022",
+        "name": "lheron",
+        "values": 100,
+        "category": 2,
+        "source_count": 202,
+        "target_count": 54,
+        "EC": 35886
+    },
+    {
+        "id": "a598818721",
+        "name": "RBlumenstein",
+        "values": 100,
+        "category": 2,
+        "source_count": 227,
+        "target_count": 81,
+        "EC": 41741
+    },
+    {
+        "id": "a14115912",
+        "name": "ShiraOvide",
+        "values": 100,
+        "category": 2,
+        "source_count": 156,
+        "target_count": 75,
+        "EC": 31745
+    },
+    {
+        "id": "a17316885",
+        "name": "DavidClinchNews",
+        "values": 100,
+        "category": 2,
+        "source_count": 181,
+        "target_count": 278,
+        "EC": 63165
+    },
+    {
+        "id": "a16218084",
+        "name": "timburrowes",
+        "values": 90,
+        "category": 3,
+        "source_count": 14,
+        "target_count": 347,
+        "EC": 51248
+    },
+    {
+        "id": "a55219159",
+        "name": "edwina_b",
+        "values": 23.05,
+        "category": 3,
+        "source_count": 169,
+        "target_count": 96,
+        "EC": 51999
+    },
+    {
+        "id": "a883426626",
+        "name": "MichaelRoddan",
+        "values": 90,
+        "category": 3,
+        "source_count": 194,
+        "target_count": 130,
+        "EC": 61862
+    },
+    {
+        "id": "a143991182",
+        "name": "darrenwick9",
+        "values": 90,
+        "category": 3,
+        "source_count": 145,
+        "target_count": 122,
+        "EC": 52456
+    },
+    {
+        "id": "a188236063",
+        "name": "lanai_scarr",
+        "values": 90,
+        "category": 3,
+        "source_count": 177,
+        "target_count": 167,
+        "EC": 68076
+    },
+    {
+        "id": "a205965649",
+        "name": "sarafischer",
+        "values": 48.4,
+        "category": 3,
+        "source_count": 138,
+        "target_count": 71,
+        "EC": 28221
+    },
+    {
+        "id": "a2592733051",
+        "name": "cpyne",
+        "values": 35.22,
+        "category": 3,
+        "source_count": 179,
+        "target_count": 57,
+        "EC": 43034
+    },
+    {
+        "id": "a20118552",
+        "name": "tauerbach",
+        "values": 90,
+        "category": 3,
+        "source_count": 110,
+        "target_count": 127,
+        "EC": 50299
+    },
+    {
+        "id": "a284990645",
+        "name": "TheRealJessLeo",
+        "values": 68.93,
+        "category": 3,
+        "source_count": 61,
+        "target_count": 39,
+        "EC": 17643
+    },
+    {
+        "id": "a187451636",
+        "name": "antonrosetweet",
+        "values": 90,
+        "category": 3,
+        "source_count": 67,
+        "target_count": 98,
+        "EC": 30886
+    },
+    {
+        "id": "a2556631525",
+        "name": "purcellpw",
+        "values": 90,
+        "category": 3,
+        "source_count": 74,
+        "target_count": 139,
+        "EC": 41484
+    },
+    {
+        "id": "a26682924",
+        "name": "maxmarkson",
+        "values": 34.98,
+        "category": 3,
+        "source_count": 120,
+        "target_count": 115,
+        "EC": 43138
+    },
+    {
+        "id": "a31656431",
+        "name": "RyanNorthover",
+        "values": 90,
+        "category": 3,
+        "source_count": 98,
+        "target_count": 155,
+        "EC": 47144
+    },
+    {
+        "id": "a281027602",
+        "name": "patkeam",
+        "values": 24.5,
+        "category": 3,
+        "source_count": 20,
+        "target_count": 20,
+        "EC": 5490
+    },
+    {
+        "id": "a34206132",
+        "name": "_leo_s",
+        "values": 90,
+        "category": 3,
+        "source_count": 198,
+        "target_count": 100,
+        "EC": 54056
+    },
+    {
+        "id": "a21628821",
+        "name": "lewiss50",
+        "values": 80.57,
+        "category": 3,
+        "source_count": 129,
+        "target_count": 164,
+        "EC": 56690
+    },
+    {
+        "id": "a550847452",
+        "name": "kennedyawards",
+        "values": 90,
+        "category": 3,
+        "source_count": 114,
+        "target_count": 111,
+        "EC": 43347
+    },
+    {
+        "id": "a1959923521",
+        "name": "DaniLeMessurier",
+        "values": 90,
+        "category": 3,
+        "source_count": 73,
+        "target_count": 103,
+        "EC": 38781
+    },
+    {
+        "id": "a15502227",
+        "name": "clivedickens",
+        "values": 22.85,
+        "category": 3,
+        "source_count": 40,
+        "target_count": 32,
+        "EC": 12816
+    },
+    {
+        "id": "a453671929",
+        "name": "KaitlynOffer",
+        "values": 56.84,
+        "category": 3,
+        "source_count": 107,
+        "target_count": 53,
+        "EC": 33262
+    },
+    {
+        "id": "a154128907",
+        "name": "cathwebber",
+        "values": 90,
+        "category": 3,
+        "source_count": 203,
+        "target_count": 221,
+        "EC": 70685
+    },
+    {
+        "id": "a57183016",
+        "name": "NicBerko",
+        "values": 90,
+        "category": 3,
+        "source_count": 100,
+        "target_count": 120,
+        "EC": 48609
+    },
+    {
+        "id": "a21741803",
+        "name": "paulstarick",
+        "values": 39.93,
+        "category": 3,
+        "source_count": 70,
+        "target_count": 35,
+        "EC": 21606
+    },
+    {
+        "id": "a165700830",
+        "name": "dwabriz",
+        "values": 40.99,
+        "category": 3,
+        "source_count": 159,
+        "target_count": 94,
+        "EC": 47763
+    },
+    {
+        "id": "a223360304",
+        "name": "Maxepmason",
+        "values": 90,
+        "category": 3,
+        "source_count": 131,
+        "target_count": 97,
+        "EC": 44792
+    },
+    {
+        "id": "a21926199",
+        "name": "LukeDennehy",
+        "values": 71.07,
+        "category": 3,
+        "source_count": 165,
+        "target_count": 138,
+        "EC": 57173
+    },
+    {
+        "id": "a7433772",
+        "name": "emilysteel",
+        "values": 57.16,
+        "category": 3,
+        "source_count": 174,
+        "target_count": 64,
+        "EC": 34886
+    },
+    {
+        "id": "a536232865",
+        "name": "DylRobinson",
+        "values": 41.28,
+        "category": 3,
+        "source_count": 47,
+        "target_count": 13,
+        "EC": 13309
+    },
+    {
+        "id": "a484570953",
+        "name": "_SarahMcPhee",
+        "values": 90,
+        "category": 3,
+        "source_count": 124,
+        "target_count": 139,
+        "EC": 50816
+    },
+    {
+        "id": "a2573887020",
+        "name": "GeorgiClelland",
+        "values": 90,
+        "category": 3,
+        "source_count": 8,
+        "target_count": 13,
+        "EC": 2577
+    },
+    {
+        "id": "a252515824",
+        "name": "SamEBJones",
+        "values": 90,
+        "category": 3,
+        "source_count": 104,
+        "target_count": 120,
+        "EC": 47706
+    },
+    {
+        "id": "a301773681",
+        "name": "fergusonjw",
+        "values": 90,
+        "category": 3,
+        "source_count": 135,
+        "target_count": 76,
+        "EC": 43435
+    },
+    {
+        "id": "a1052099707076395009",
+        "name": "BrittHiggins_",
+        "values": 20.62,
+        "category": 3,
+        "source_count": 172,
+        "target_count": 56,
+        "EC": 42416
+    },
+    {
+        "id": "a1119928966188392449",
+        "name": "dixie_sulda",
+        "values": 49.89,
+        "category": 3,
+        "source_count": 30,
+        "target_count": 38,
+        "EC": 12114
+    },
+    {
+        "id": "a24272400",
+        "name": "Rencastello",
+        "values": 67.82,
+        "category": 3,
+        "source_count": 46,
+        "target_count": 34,
+        "EC": 13307
+    },
+    {
+        "id": "a881268452",
+        "name": "CelesteVillani",
+        "values": 22.09,
+        "category": 3,
+        "source_count": 31,
+        "target_count": 49,
+        "EC": 13505
+    },
+    {
+        "id": "a14732357",
+        "name": "Peter_F_Ryan",
+        "values": 51.86,
+        "category": 3,
+        "source_count": 129,
+        "target_count": 92,
+        "EC": 44016
+    },
+    {
+        "id": "a78533257",
+        "name": "mrjoeaston",
+        "values": 56.52,
+        "category": 3,
+        "source_count": 206,
+        "target_count": 59,
+        "EC": 49185
+    },
+    {
+        "id": "a14944735",
+        "name": "ViscountBrooky",
+        "values": 90,
+        "category": 3,
+        "source_count": 221,
+        "target_count": 177,
+        "EC": 70069
+    },
+    {
+        "id": "a18597158",
+        "name": "Val61",
+        "values": 19.92,
+        "category": 3,
+        "source_count": 36,
+        "target_count": 39,
+        "EC": 11111
+    },
+    {
+        "id": "a2213267923",
+        "name": "D_JervisBardy",
+        "values": 49.91,
+        "category": 3,
+        "source_count": 64,
+        "target_count": 51,
+        "EC": 21872
+    },
+    {
+        "id": "a170905926",
+        "name": "Dean_Nye",
+        "values": 56.1,
+        "category": 3,
+        "source_count": 102,
+        "target_count": 68,
+        "EC": 35088
+    },
+    {
+        "id": "a356017534",
+        "name": "TSWestbrook",
+        "values": 71.29,
+        "category": 3,
+        "source_count": 52,
+        "target_count": 112,
+        "EC": 34228
+    },
+    {
+        "id": "a125505097",
+        "name": "mirandaleigh90",
+        "values": 90,
+        "category": 3,
+        "source_count": 102,
+        "target_count": 110,
+        "EC": 42870
+    },
+    {
+        "id": "a235133746",
+        "name": "BrettMasonNews",
+        "values": 96.67,
+        "category": 3,
+        "source_count": 226,
+        "target_count": 278,
+        "EC": 83806
+    },
+    {
+        "id": "a33811563",
+        "name": "MayneReport",
+        "values": 50.09,
+        "category": 3,
+        "source_count": 233,
+        "target_count": 210,
+        "EC": 75384
+    },
+    {
+        "id": "a54826289",
+        "name": "michaelbodey",
+        "values": 90,
+        "category": 3,
+        "source_count": 140,
+        "target_count": 100,
+        "EC": 45846
+    },
+    {
+        "id": "a22123727",
+        "name": "mscott",
+        "values": 42.62,
+        "category": 3,
+        "source_count": 326,
+        "target_count": 60,
+        "EC": 58084
+    },
+    {
+        "id": "a18717981",
+        "name": "adaromas",
+        "values": 90,
+        "category": 3,
+        "source_count": 39,
+        "target_count": 64,
+        "EC": 17150
+    },
+    {
+        "id": "a25297301",
+        "name": "workmanalice",
+        "values": 57.01,
+        "category": 3,
+        "source_count": 264,
+        "target_count": 138,
+        "EC": 71933
+    },
+    {
+        "id": "a260529993",
+        "name": "AnthDeCeglie",
+        "values": 90,
+        "category": 3,
+        "source_count": 196,
+        "target_count": 133,
+        "EC": 58435
+    },
+    {
+        "id": "a60022825",
+        "name": "nicchristensen",
+        "values": 90,
+        "category": 3,
+        "source_count": 261,
+        "target_count": 183,
+        "EC": 77289
+    },
+    {
+        "id": "a2597252118",
+        "name": "LydiaKellner",
+        "values": 29.78,
+        "category": 3,
+        "source_count": 30,
+        "target_count": 28,
+        "EC": 9033
+    },
+    {
+        "id": "a625985237",
+        "name": "JournoLawJ",
+        "values": 90,
+        "category": 3,
+        "source_count": 183,
+        "target_count": 153,
+        "EC": 63301
+    },
+    {
+        "id": "a14707794",
+        "name": "mjrowland68",
+        "values": 48.92,
+        "category": 3,
+        "source_count": 292,
+        "target_count": 105,
+        "EC": 67066
+    },
+    {
+        "id": "a352893059",
+        "name": "MattYoung",
+        "values": 90,
+        "category": 3,
+        "source_count": 145,
+        "target_count": 138,
+        "EC": 52508
+    },
+    {
+        "id": "a24095073",
+        "name": "murphymiranda",
+        "values": 90,
+        "category": 3,
+        "source_count": 93,
+        "target_count": 72,
+        "EC": 36992
+    },
+    {
+        "id": "a2360181649",
+        "name": "julestullberg",
+        "values": 90,
+        "category": 3,
+        "source_count": 37,
+        "target_count": 129,
+        "EC": 30903
+    },
+    {
+        "id": "a18973190",
+        "name": "nichopkins",
+        "values": 90,
+        "category": 3,
+        "source_count": 99,
+        "target_count": 60,
+        "EC": 34648
+    },
+    {
+        "id": "a521954593",
+        "name": "BelindaWillis",
+        "values": 24.5,
+        "category": 3,
+        "source_count": 29,
+        "target_count": 23,
+        "EC": 8550
+    },
+    {
+        "id": "a1046659700",
+        "name": "ByEichler",
+        "values": 29.48,
+        "category": 3,
+        "source_count": 50,
+        "target_count": 129,
+        "EC": 32048
+    },
+    {
+        "id": "a266238875",
+        "name": "amydale_tweets",
+        "values": 90,
+        "category": 3,
+        "source_count": 134,
+        "target_count": 114,
+        "EC": 52565
+    },
+    {
+        "id": "a151140821",
+        "name": "DowJones",
+        "values": 35.46,
+        "category": 3,
+        "source_count": 185,
+        "target_count": 58,
+        "EC": 28795
+    },
+    {
+        "id": "a26460562",
+        "name": "katie_robertson",
+        "values": 90,
+        "category": 3,
+        "source_count": 149,
+        "target_count": 98,
+        "EC": 47818
+    },
+    {
+        "id": "a21348764",
+        "name": "TomRichardson",
+        "values": 18.17,
+        "category": 3,
+        "source_count": 74,
+        "target_count": 134,
+        "EC": 39276
+    },
+    {
+        "id": "a35690142",
+        "name": "annikasmethurst",
+        "values": 86.42,
+        "category": 3,
+        "source_count": 250,
+        "target_count": 114,
+        "EC": 64206
+    },
+    {
+        "id": "a147869440",
+        "name": "fitzhunter",
+        "values": 27.31,
+        "category": 3,
+        "source_count": 133,
+        "target_count": 71,
+        "EC": 42037
+    },
+    {
+        "id": "a23421574",
+        "name": "sarahelks",
+        "values": 90,
+        "category": 3,
+        "source_count": 135,
+        "target_count": 73,
+        "EC": 40605
+    },
+    {
+        "id": "a349859290",
+        "name": "leshinton",
+        "values": 90,
+        "category": 3,
+        "source_count": 173,
+        "target_count": 65,
+        "EC": 38085
+    },
+    {
+        "id": "a14521106",
+        "name": "larasinclair",
+        "values": 90,
+        "category": 3,
+        "source_count": 118,
+        "target_count": 50,
+        "EC": 31347
+    },
+    {
+        "id": "a92482767",
+        "name": "1310greg",
+        "values": 50.3,
+        "category": 3,
+        "source_count": 15,
+        "target_count": 23,
+        "EC": 8618
+    },
+    {
+        "id": "a318170746",
+        "name": "Nic_Coxy",
+        "values": 35.73,
+        "category": 3,
+        "source_count": 31,
+        "target_count": 64,
+        "EC": 20026
+    },
+    {
+        "id": "a71153413",
+        "name": "AndersonLyesh",
+        "values": 29.47,
+        "category": 3,
+        "source_count": 15,
+        "target_count": 14,
+        "EC": 7195
+    },
+    {
+        "id": "a7146412",
+        "name": "GlennStanaway",
+        "values": 90.66,
+        "category": 3,
+        "source_count": 18,
+        "target_count": 53,
+        "EC": 17103
+    },
+    {
+        "id": "a33992890",
+        "name": "paulwsj",
+        "values": 90,
+        "category": 3,
+        "source_count": 187,
+        "target_count": 104,
+        "EC": 39894
+    },
+    {
+        "id": "a23145378",
+        "name": "geoffreyfowler",
+        "values": 44.54,
+        "category": 3,
+        "source_count": 156,
+        "target_count": 103,
+        "EC": 36674
+    },
+    {
+        "id": "a488836063",
+        "name": "davidhurleyHS",
+        "values": 90,
+        "category": 3,
+        "source_count": 129,
+        "target_count": 117,
+        "EC": 44210
+    },
+    {
+        "id": "a36382502",
+        "name": "johnjedwards3",
+        "values": 90,
+        "category": 3,
+        "source_count": 95,
+        "target_count": 125,
+        "EC": 31537
+    },
+    {
+        "id": "a805276508",
+        "name": "gabbystern",
+        "values": 90,
+        "category": 3,
+        "source_count": 179,
+        "target_count": 151,
+        "EC": 43403
+    },
+    {
+        "id": "a119714092",
+        "name": "Storyful",
+        "values": 71.46,
+        "category": 3,
+        "source_count": 260,
+        "target_count": 148,
+        "EC": 53155
+    },
+    {
+        "id": "a14923268",
+        "name": "claireatki",
+        "values": 89.8,
+        "category": 3,
+        "source_count": 114,
+        "target_count": 106,
+        "EC": 29844
+    },
+    {
+        "id": "a14515799",
+        "name": "brianstelter",
+        "values": 97.42,
+        "category": 3,
+        "source_count": 323,
+        "target_count": 48,
+        "EC": 46986
+    },
+    {
+        "id": "a21788515",
+        "name": "Nravitz",
+        "values": 90,
+        "category": 3,
+        "source_count": 195,
+        "target_count": 41,
+        "EC": 36490
+    },
+    {
+        "id": "a31077006",
+        "name": "msmarto",
+        "values": 37.11,
+        "category": 3,
+        "source_count": 175,
+        "target_count": 112,
+        "EC": 56266
+    },
+    {
+        "id": "a37881687",
+        "name": "MarkDiStef",
+        "values": 60.78,
+        "category": 3,
+        "source_count": 339,
+        "target_count": 78,
+        "EC": 63712
+    },
+    {
+        "id": "a406442185",
+        "name": "LachCartwright",
+        "values": 75.08,
+        "category": 3,
+        "source_count": 97,
+        "target_count": 86,
+        "EC": 33934
+    },
+    {
+        "id": "a2818323725",
+        "name": "influencingcom",
+        "values": 40.43,
+        "category": 3,
+        "source_count": 0,
+        "target_count": 138,
+        "EC": 20501
+    },
+    {
+        "id": "a1977180493",
+        "name": "MedianetEditor",
+        "values": 39.57,
+        "category": 3,
+        "source_count": 0,
+        "target_count": 162,
+        "EC": 30338
+    },
+    {
+        "id": "a973500819197669376",
+        "name": "AusPolStats",
+        "values": 34.35,
+        "category": 3,
+        "source_count": 0,
+        "target_count": 137,
+        "EC": 26231
+    },
+    {
+        "id": "a93147668",
+        "name": "SelinaSteele",
+        "values": 34.35,
+        "category": 3,
+        "source_count": 0,
+        "target_count": 107,
+        "EC": 17546
+    },
+    {
+        "id": "a101653",
+        "name": "diversionary",
+        "values": 40,
+        "category": 3,
+        "source_count": 0,
+        "target_count": 30,
+        "EC": 4039
+    }
+]

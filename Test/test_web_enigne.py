@@ -12,10 +12,10 @@ class MainWidget(QtWidgets.QWidget):
 
     def init_ui(self):
 
-        self.resize(900, 600)
+        self.resize(1600, 900)
         self.setStyleSheet('background-color:rgba(255,255,255,.5)')
         self.browser = QWebEngineView(self)
-        self.browser.resize(900, 600)
+        self.browser.resize(1600, 900)
         self.browser.load(QUrl('file:///D:/PyCharm 2022.1.3/PythonProject/TwitterPyQt/html/force.html'))
 
 
